@@ -66,6 +66,19 @@ a:hover { text-decoration-thickness: 2px; }
   font-size: 1.15rem;
   font-weight: 600;
 }
+.hero-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+/* マスコット：64ドットのドット絵。整数倍（PC 2倍・スマホ 1倍）で表示してドットをくっきり保つ */
+.mascot {
+  flex-shrink: 0;
+  width: 128px;
+  height: 152px;
+  image-rendering: pixelated;
+}
 .toc {
   display: flex;
   flex-wrap: wrap;
@@ -171,5 +184,8 @@ footer {
 @media (max-width: 480px) {
   .hero { padding-top: 44px; }
   .hero h1 { font-size: 1.8rem; }
+  /* スマホでは本文の幅を削らないよう、名前の右上に重ねて置く */
+  .hero-head { display: block; position: relative; }
+  .mascot { position: absolute; top: 0; right: 0; width: 64px; height: 76px; }
   .wrap { padding: 0 16px; }
 }
